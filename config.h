@@ -16,7 +16,7 @@ static const Bool foreground    = True;
  * then the current position is changed + newposition. If npisrelative
  * is False, then newposition is an absolute position.
  */
-static int  newposition   = 0;
+static int  newposition   = -1;
 static Bool npisrelative  = False;
 
 #define SETPROP(p) { \
@@ -32,7 +32,7 @@ static Key keys[] = { \
 	/* modifier                     key        function        argument */
 //	{ MODKEY|ShiftMask,             XK_Return, focusonce,      { 0 } },
 	{ ShiftMask,                    XK_Down, spawn,          { 0 } },
-//	{ MODKEY,                       XK_t,      spawn,          SETPROP("_TABBED_SELECT_TAB") },
+//	{ ShiftKey,                       XK_Down,      spawn,          SETPROP("_TABBED_SELECT_TAB") },
 
 	{ ShiftMask,                    XK_Left,      rotate,         { .i = -1 } },
 	{ ShiftMask,                    XK_Right,      rotate,         { .i = +1 } },
